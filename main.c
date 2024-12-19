@@ -65,4 +65,22 @@ bool opcaoValida(int opcao, int opcoesValidas[], int tamanhoAray){
     return false;
 }
 
+
+int obterInputDoUsuario(int opcoesValidas[],int tamanho){
+    int valor;
+
+    scanf("%d",&valor);
+
+    if(valor == 0) exit(0);
+
+    while (!opcaoValida(valor,opcoesValidas,tamanho))
+    {
+        printf("\nA opção escolhida é inválida, tente novamente: ");
+
+        scanf("%d",&valor);
+
+        if(valor == 0) exit(0);
+    }
+
+    return valor;
 }
