@@ -31,7 +31,7 @@ double terabytesParaMegabytes(double terabytes);
 double terabytesParaGigabytes(double terabytes);
 void imprimirOpcoes(char *opcoes[], int tamanhoArray, int numeroDaOpcaoIgnorada);
 bool opcaoValida(int opcao, int opcoesValidas[], int tamanhoAray);
-void removerDasOpcoesPorIndex(int opcoes[], int *tamanho, int index);
+void removerDasOpcoesValidasPorIndex(int opcoes[], int *tamanho, int index);
 int obterInputDoUsuario(int opcoesValidas[],int tamanho);
 
 int main(int argc, char const *argv[])
@@ -83,4 +83,18 @@ int obterInputDoUsuario(int opcoesValidas[],int tamanho){
     }
 
     return valor;
+}
+
+/*
+    Remove a primeira opção selecionada pelo usuário do array de opções válidas,
+    evitando que a mesma unidade seja selecionada duas vezes, após isso, diminui
+    o valor da variável que informa o tamanho do array de opções.
+*/
+void removerDasOpcoesValidasPorIndex(int opcoes[], int *tamanho, int index){
+    for (int contador = index; contador < (*tamanho); contador++)
+    {
+        opcoes[contador] = opcoes[contador+1];
+    }
+    
+    (*tamanho) --;
 }
