@@ -29,7 +29,7 @@ double terabytesParaBytes(double terabytes);
 double terabytesParaKilobytes(double terabytes);
 double terabytesParaMegabytes(double terabytes);
 double terabytesParaGigabytes(double terabytes);
-void imprimirOpcoes(char *opcoes[], int tamanhoArray, int indexDaOpcaoIgnorada);
+void imprimirOpcoes(char *opcoes[], int tamanhoArray, int numeroDaOpcaoIgnorada);
 bool opcaoValida(int opcao, int opcoesValidas[], int tamanhoAray);
 void removerDasOpcoesPorIndex(int opcoes[], int *tamanho, int index);
 int obterInputDoUsuario(int opcoesValidas[],int tamanho);
@@ -40,3 +40,17 @@ int main(int argc, char const *argv[])
 }
 
 // Implementação das funções
+
+/// Conversão de bytes
+
+void imprimirOpcoes(char *opcoes[], int tamanhoArray, int numeroDaOpcaoIgnorada){
+    for(int contador = 0; contador < tamanhoArray; contador++){
+        if(contador + 1 == numeroDaOpcaoIgnorada){
+            continue;
+        }else{
+            printf("%d - %s\n",contador + 1,opcoes[contador]);
+        }
+    }
+
+    printf("0 - Sair\n\n");
+}
