@@ -54,3 +54,15 @@ void imprimirOpcoes(char *opcoes[], int tamanhoArray, int numeroDaOpcaoIgnorada)
 
     printf("0 - Sair\n\n");
 }
+
+// Verifica se a opção inserida pelo usuário é válida
+bool opcaoValida(int opcao, int opcoesValidas[], int tamanhoAray){
+    for (int contador = 0; contador < tamanhoAray; contador++)
+    {
+        if(opcao == opcoesValidas[contador]) return true;
+    }
+    
+    return false;
+}
+
+}
