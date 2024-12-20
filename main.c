@@ -98,3 +98,19 @@ void removerDasOpcoesValidasPorIndex(int opcoes[], int *tamanho, int index){
     
     (*tamanho) --;
 }
+
+double bytesParaKilobytes(double bytes) {
+    return bytes / 1024.0;
+}
+
+double bytesParaMegabytes(double bytes) {
+    return bytes / pow(1024.0,2);
+}
+
+double bytesParaGigabytes(double bytes){
+    return bytes / pow(1024.0,3);
+}
+
+double bytesParaTerabytes(double bytes){
+    return bytes / pow(1024.0,4);
+}
