@@ -114,3 +114,19 @@ double bytesParaGigabytes(double bytes){
 double bytesParaTerabytes(double bytes){
     return bytes / pow(1024.0,4);
 }
+
+double kilobytesParaBytes(double kilobytes){
+    return kilobytes * 1024.0;
+}
+
+double kilobytesParaMegabytes(double kilobytes){
+    return kilobytes / 1024.0;
+}
+
+double kilobytesParaGigabytes(double kilobytes){
+    return kilobytes / pow(1024.0,2);
+}
+
+double kilobytesParaTerabytes(double kilobytes){
+    return kilobytes / pow(1024.0,3);
+}
