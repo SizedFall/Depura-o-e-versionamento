@@ -162,3 +162,19 @@ double gigabytesParaMegabytes(double gigabytes){
 double gigabytesParaTerabytes(double gigabytes){
     return gigabytes / 1024.0;
 }
+
+double terabytesParaBytes(double terabytes){
+    return terabytes * pow(1024.0,4);
+}
+
+double terabytesParaKilobytes(double terabytes){
+    return terabytes * pow(1024.0,3);
+}
+
+double terabytesParaMegabytes(double terabytes){
+    return terabytes * pow(1024.0,2);
+}
+
+double terabytesParaGigabytes(double terabytes){
+    return terabytes * 1024.0;
+}
