@@ -2,7 +2,14 @@
 
 Equipe: Grupo 0, Subgrupo 6
 
-## Coisas a fazer
+## Compilação
 
-* [ ] Adicionar código
-* [ ] Colocar instruções de uso no README
+O projeto é feito em C. Para compilar, basta compilar o arquivo `main.c`
+e executar o código resultante.
+
+## Uso da aplicação
+
+### Menu de conversão de tempo
+
+O menu de conversão de tempo disponibiliza funções para conversão entre
+horas, minutos e segundos.
