@@ -130,3 +130,19 @@ double kilobytesParaGigabytes(double kilobytes){
 double kilobytesParaTerabytes(double kilobytes){
     return kilobytes / pow(1024.0,3);
 }
+
+double megabytesParaBytes(double megabytes){
+    return megabytes * pow(1024.0,2);
+}
+
+double megabytesParaKilobytes(double megabytes){
+    return megabytes * 1024.0;
+}
+
+double megabytesParaGigabytes(double megabytes){
+    return megabytes / 1024.0;
+}
+
+double megabytesParaTerabytes(double megabytes){
+    return megabytes / pow(1024.0,2);
+}
