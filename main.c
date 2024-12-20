@@ -146,3 +146,19 @@ double megabytesParaGigabytes(double megabytes){
 double megabytesParaTerabytes(double megabytes){
     return megabytes / pow(1024.0,2);
 }
+
+double gigabytesParaBytes(double gigabytes){
+    return gigabytes * pow(1024.0,3);
+}
+
+double gigabytesParaKilobytes(double gigabytes){
+    return gigabytes * pow(1024.0,2);
+}
+
+double gigabytesParaMegabytes(double gigabytes){
+    return gigabytes * 1024.0;
+}
+
+double gigabytesParaTerabytes(double gigabytes){
+    return gigabytes / 1024.0;
+}
