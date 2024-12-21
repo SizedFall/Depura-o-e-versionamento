@@ -9,6 +9,7 @@
 
 /// Conversão de bytes
 
+void conversaoDeBytes();
 double bytesParaKilobytes(double bytes);
 double bytesParaMegabytes(double bytes);
 double bytesParaGigabytes(double bytes);
