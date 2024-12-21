@@ -5,6 +5,9 @@
 #include <stdbool.h>
 #include <math.h>
 
+// Definindo um ponteiro para função
+typedef double (*ponteiroParaFuncao)(double);
+
 // Definições das funções
 
 /// Conversão de bytes
@@ -43,6 +46,64 @@ int main(int argc, char const *argv[])
 // Implementação das funções
 
 /// Conversão de bytes
+
+void conversaoDeBytes(){
+    char *opcoes[] = {"Bytes",
+    "Kilobytes (KB)",
+    "Megabytes (MB)",
+    "Gigabytes (GB)",
+    "Terabytes (TB)"};
+
+    int tamanhoOpcoes = sizeof(opcoes) / sizeof(opcoes[0]);
+
+    int opcoesValidas[] = {1,2,3,4,5};
+
+    int tamanhoOpcoesValidas = sizeof(opcoesValidas) / sizeof(opcoesValidas[0]);
+
+    int primeiraOpcao, segundaOpcao;
+
+    double valor, valorConvertido;
+
+    /* Matriz que armazena ponteiros para funções, pra ficar mais fácil chamar a 
+    função correta para a conversão escolhida.
+    */
+    ponteiroParaFuncao opcoesDeConversao[5][5] = {
+        {NULL,bytesParaKilobytes,bytesParaMegabytes,bytesParaGigabytes,bytesParaTerabytes},
+        {kilobytesParaBytes,NULL,kilobytesParaMegabytes,kilobytesParaGigabytes,kilobytesParaTerabytes},
+        {megabytesParaBytes,megabytesParaKilobytes,NULL,megabytesParaGigabytes,megabytesParaTerabytes},
+        {gigabytesParaBytes,gigabytesParaKilobytes,gigabytesParaMegabytes,NULL,gigabytesParaTerabytes},
+        {terabytesParaBytes,terabytesParaKilobytes,terabytesParaMegabytes,terabytesParaGigabytes,NULL}
+    };
+
+    printf("Bem vindo ao menu de converção das unidades de byte!\nSelecione o número correspondente a unidade que você quer converter, ou pressione 0 para sair:\n\n");
+
+    imprimirOpcoes(opcoes, tamanhoOpcoes, -1);
+
+    printf("Informe sua escolha: ");
+
+    primeiraOpcao = obterInputDoUsuario(opcoesValidas,tamanhoOpcoesValidas);
+
+    removerDasOpcoesValidasPorIndex(opcoesValidas,&tamanhoOpcoesValidas,primeiraOpcao-1);
+
+    printf("\n\nPara qual unidade deseja converter?\n\n");
+
+    imprimirOpcoes(opcoes, tamanhoOpcoes, primeiraOpcao);
+
+    printf("Informe sua escolha: ");
+
+    segundaOpcao = obterInputDoUsuario(opcoesValidas,tamanhoOpcoesValidas);
+
+    printf("\nVocê escolheu converter %s para %s.\n", opcoes[primeiraOpcao - 1], opcoes[segundaOpcao - 1]);
+
+    printf("Informe a quantidade de %s que serão convertidos: ",opcoes[primeiraOpcao-1]);
+
+    scanf("%lf",&valor);
+
+    valorConvertido = opcoesDeConversao[primeiraOpcao-1][segundaOpcao-1](valor);
+
+    printf("%.2lf %s equivalem a %.2lf %s!\n\n",valor,opcoes[primeiraOpcao -1],valorConvertido,opcoes[segundaOpcao-1]);
+
+}
 
 void imprimirOpcoes(char *opcoes[], int tamanhoArray, int numeroDaOpcaoIgnorada){
     for(int contador = 0; contador < tamanhoArray; contador++){
