@@ -8,6 +8,12 @@ double minutosParaSegundos(double min);
 double minutosParaHoras(double min);
 double horasParaMinutos(double min);
 double horasParaSegundos(double min);
+double wattsParaQuilowatts(double watts);
+double wattsParaCV(double watts);
+double quilowattsParaWatts(double quilowatts);
+double quilowattsParaCV(double quilowatts);
+double cvParaWatts(double cv);
+double cvParaQuilowatts(double cv);
 void menuConversaoTempo(void);
 void menuConversaoComprimento(void);
 
@@ -45,6 +51,36 @@ double horasParaMinutos(double min)
 double horasParaSegundos(double min)
 {
 	return min * 60.0 * 60.0;
+}
+
+double wattsParaQuilowatts(double watts)
+{
+    return watts / 1000.0;
+}
+
+double wattsParaCV(double watts)
+{
+    return watts / 735.5;
+}
+
+double quilowattsParaWatts(double quilowatts)
+{
+    return quilowatts * 1000.0;
+}
+
+double quilowattsParaCV(double quilowatts)
+{
+    return quilowatts * 1000.0 / 735.5;
+}
+
+double cvParaWatts(double cv)
+{
+    return cv * 735.5;
+}
+
+double cvParaQuilowatts(double cv)
+{
+    return cv * 735.5 / 1000.0;
 }
 
 void menuConversaoTempo(void)
