@@ -29,7 +29,7 @@ int main(void)
     while (continuar == 1)
 	{
 		printf("Qual conversao deseja realizar? \n");
-		printf("1- Unidades de distancia \n");
+		printf("1- Unidades de comprimento \n");
 		printf("2- Unidades de tempo \n");
 		printf("3- Unidades de potencia \n");
 		printf("4- Unidades de temperatura \n");
@@ -39,7 +39,8 @@ int main(void)
 
 		switch (opcao)
 		{
-			case 1: // Chamar a função responsável pela conversão das unidades de distancia
+			case 1: // Chamar a função responsável pela conversão das unidades de comprimento
+				menuConversaoComprimento();
 				break;
 
 			case 2: // Chamar a função responsável pela conversão das unidades de tempo
