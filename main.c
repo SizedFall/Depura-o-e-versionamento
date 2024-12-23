@@ -569,3 +569,7 @@ float celsiusParaFahrenheit(float celsius) {
 float celsiusParaKelvin(float celsius) {
     return celsius + 273.15;
 }
+
+float fahrenheitParaCelsius(float fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
