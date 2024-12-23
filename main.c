@@ -584,3 +584,67 @@ float kelvinParaCelsius(float kelvin) {
 float kelvinParaFahrenheit(float kelvin) {
     return (kelvin - 273.15) * 9 / 5 + 32;
 }
+
+// Menu principal
+void menu() {
+    int opcao;
+    float temp, resultado;
+
+    do {
+        printf("\nMenu de Conversão de Temperatura:\n");
+        printf("1. Celsius para Fahrenheit\n");
+        printf("2. Fahrenheit para Celsius\n");
+        printf("3. Celsius para Kelvin\n");
+        printf("4. Kelvin para Celsius\n");
+        printf("5. Fahrenheit para Kelvin\n");
+        printf("6. Kelvin para Fahrenheit\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Digite a temperatura em Celsius: ");
+                scanf("%f", &temp);
+                resultado = celsiusParaFahrenheit(temp);
+                printf("%.2f Celsius equivale a %.2f Fahrenheit\n", temp, resultado);
+                break;
+            case 2:
+                printf("Digite a temperatura em Fahrenheit: ");
+                scanf("%f", &temp);
+                resultado = fahrenheitParaCelsius(temp);
+                printf("%.2f Fahrenheit equivale a %.2f Celsius\n", temp, resultado);
+                break;
+            case 3:
+                printf("Digite a temperatura em Celsius: ");
+                scanf("%f", &temp);
+                resultado = celsiusParaKelvin(temp);
+                printf("%.2f Celsius equivale a %.2f Kelvin\n", temp, resultado);
+                break;
+            case 4:
+                printf("Digite a temperatura em Kelvin: ");
+                scanf("%f", &temp);
+                resultado = kelvinParaCelsius(temp);
+                printf("%.2f Kelvin equivale a %.2f Celsius\n", temp, resultado);
+                break;
+            case 5:
+                printf("Digite a temperatura em Fahrenheit: ");
+                scanf("%f", &temp);
+                resultado = fahrenheitParaKelvin(temp);
+                printf("%.2f Fahrenheit equivale a %.2f Kelvin\n", temp, resultado);
+                break;
+            case 6:
+                printf("Digite a temperatura em Kelvin: ");
+                scanf("%f", &temp);
+                resultado = kelvinParaFahrenheit(temp);
+                printf("%.2f Kelvin equivale a %.2f Fahrenheit\n", temp, resultado);
+                break;
+            case 0:
+                printf("Saindo do programa.\n");
+                break;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+                break;
+        }
+    } while (opcao != 0);
+}
