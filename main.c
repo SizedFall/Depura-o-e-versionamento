@@ -81,7 +81,8 @@ int main(void)
 				break;
 
 			case 4: // Chamar a função responsável pela conversão das unidades de temperatura
-				break;
+				menu();
+                break;
 
 			case 5: // Chamar a função responsável pela conversão das unidades de massa
 				menuConversaoMassa();
