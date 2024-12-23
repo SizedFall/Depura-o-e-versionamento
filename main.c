@@ -561,3 +561,7 @@ double menuConversaoMassa(void)
     }
     return valorConvertido;
 } 
+
+float celsiusParaFahrenheit(float celsius) {
+    return (celsius * 9 / 5) + 32;
+}
