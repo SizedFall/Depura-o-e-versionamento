@@ -565,3 +565,7 @@ double menuConversaoMassa(void)
 float celsiusParaFahrenheit(float celsius) {
     return (celsius * 9 / 5) + 32;
 }
+
+float celsiusParaKelvin(float celsius) {
+    return celsius + 273.15;
+}
