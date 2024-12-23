@@ -63,7 +63,10 @@ int main(void)
 		printf("3- Unidades de potencia \n");
 		printf("4- Unidades de temperatura \n");
 		printf("5- Unidades de massa \n");
-		printf("6- Sair \n");
+        printf("6- Unidades de byte \n");
+		printf("7- Sair \n");
+
+        printf("\n\nInforme sua escolha: ");
 		scanf("%d", &opcao);
 
 		switch (opcao)
@@ -85,9 +88,13 @@ int main(void)
 				menuConversaoMassa();
 				break;
 
-			case 6: // Sair do menu e encerrar o programa
+            case 6:
+                conversaoDeBytes();
+                break;
+
+			case 7: // Sair do menu e encerrar o programa
 				continuar = 0;
-				printf("6 foi escolhido, saindo do programa \n");
+				printf("7 foi escolhido, saindo do programa \n");
 				break;
 		}
     }
