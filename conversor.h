@@ -6,3 +6,6 @@ double quilowattsParaCV(double quilowatts);
 
 double cvParaWatts(double cv);
 double cvParaQuilowatts(double cv);
+
+void exibirMenu();
+int menuConversorPotencia();
