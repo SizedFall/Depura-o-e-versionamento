@@ -113,7 +113,7 @@ void conversaoDeBytes(void){
 
     int tamanhoOpcoes = sizeof(opcoes) / sizeof(opcoes[0]);
 
-    int opcoesValidas[] = {1,2,3,4,5};
+    int opcoesValidas[] = {0,1,2,3,4,5};
 
     int tamanhoOpcoesValidas = sizeof(opcoesValidas) / sizeof(opcoesValidas[0]);
 
@@ -140,6 +140,8 @@ void conversaoDeBytes(void){
 
     primeiraOpcao = obterInputDoUsuario(opcoesValidas,tamanhoOpcoesValidas);
 
+    if(primeiraOpcao == 0) return;
+
     removerDasOpcoesValidasPorIndex(opcoesValidas,&tamanhoOpcoesValidas,primeiraOpcao-1);
 
     printf("\n\nPara qual unidade deseja converter?\n\n");
@@ -149,6 +151,8 @@ void conversaoDeBytes(void){
     printf("Informe sua escolha: ");
 
     segundaOpcao = obterInputDoUsuario(opcoesValidas,tamanhoOpcoesValidas);
+
+    if(segundaOpcao == 0) return;
 
     printf("\nVocê escolheu converter %s para %s.\n", opcoes[primeiraOpcao - 1], opcoes[segundaOpcao - 1]);
 
@@ -190,15 +194,11 @@ int obterInputDoUsuario(int opcoesValidas[],int tamanho){
 
     scanf("%d",&valor);
 
-    if(valor == 0) exit(0);
-
     while (!opcaoValida(valor,opcoesValidas,tamanho))
     {
         printf("\nA opção escolhida é inválida, tente novamente: ");
 
         scanf("%d",&valor);
-
-        if(valor == 0) exit(0);
     }
 
     return valor;
