@@ -1,52 +1,53 @@
 #include <stdio.h>
 
 // Funções de conversão
-float metrosParaCentimetros(float metros) {
+float metrosParaCentimetros(float metros) { // Função que converte metros para centímetros
     return metros * 100;
 }
 
-float metrosParaMilimetros(float metros) {
+float metrosParaMilimetros(float metros) {  // Função que converte metros para milímetros
     return metros * 1000;
 }
 
-float centimetrosParaMetros(float centimetros) {
+float centimetrosParaMetros(float centimetros) {  // Função que converte centímetros para metros
     return centimetros / 100;
 }
 
-float milimetrosParaMetros(float milimetros) {
+float milimetrosParaMetros(float milimetros) {  // Função que converte milímetros para metros
+
     return milimetros / 1000;
 }
 
 // Funções para cada caso
-void converterMetrosParaCentimetros() {
+void converterMetrosParaCentimetros() { // Função que lê um valor em metros e imprime o valor em centímetros
     float valor;
     printf("Digite o valor em metros: ");
     scanf("%f", &valor);
     printf("%.2f metros equivalem a %.2f centímetros.\n", valor, metrosParaCentimetros(valor));
 }
 
-void converterMetrosParaMilimetros() {
+void converterMetrosParaMilimetros() { // Função que lê um valor em metros e imprime o valor em milímetros
     float valor;
     printf("Digite o valor em metros: ");
     scanf("%f", &valor);
     printf("%.2f metros equivalem a %.2f milímetros.\n", valor, metrosParaMilimetros(valor));
 }
 
-void converterCentimetrosParaMetros() {
+void converterCentimetrosParaMetros() {  // Função que lê um valor em centímetros e imprime o valor em metros
     float valor;
     printf("Digite o valor em centímetros: ");
     scanf("%f", &valor);
     printf("%.2f centímetros equivalem a %.2f metros.\n", valor, centimetrosParaMetros(valor));
 }
 
-void converterMilimetrosParaMetros() {
+void converterMilimetrosParaMetros() {  // Função que lê um valor em milímetros e imprime o valor em metros
     float valor;
     printf("Digite o valor em milímetros: ");
     scanf("%f", &valor);
     printf("%.2f milímetros equivalem a %.2f metros.\n", valor, milimetrosParaMetros(valor));
 }
 
-int main() {
+int main() {  // Função principal
     int opcao;
 
     // Menu de opções
@@ -57,7 +58,7 @@ int main() {
     printf("4. Milímetros para Metros\n");
     printf("5. Sair\n");
 
-    while (1) {
+    while (1) { // Loop infinito
         printf("\nEscolha uma opcao (1-5): ");
         if (scanf("%d", &opcao) != 1) {
             printf("Entrada invalida! Por favor, insira um numero.\n");
